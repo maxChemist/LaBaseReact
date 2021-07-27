@@ -172,11 +172,9 @@ else{
 const SequenseProperties = ({ SequensePropertiesArr }) =>
 {
   const findPrefix=(index)=>{
-   const arr= mainArray.reduce((acc,val,i)=>
-     { 
-       return( val[0]["title"]===SequensePropertiesArr[0]? val :acc)})[index]["prefix"];
+   const prefix= mainArray.reduce((acc,val,i)=>{ return( val[0]["title"]===SequensePropertiesArr[0]? val :acc)})[index]["prefix"];
   
-       return(arr)
+       return(prefix!==undefined?prefix:"")
     }
   return(
   SequensePropertiesArr.map((el,i) => (
