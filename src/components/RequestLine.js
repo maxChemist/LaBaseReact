@@ -1,6 +1,6 @@
 import React from "react";
 import FormInput from "./FormInput";
-
+import InputArray from "./InputArray";
 import FormSelect from "./FormSelect"
 
 const RequestLine = 
@@ -10,12 +10,11 @@ const RequestLine =
        };
        var step=0
        const arrLength=SamplePropertiesArr.length
-       console.log(step,arrLength,  reEnter,SamplePropertiesArr)
-
+      
        if(arrLength!==undefined) 
         { reEnter!==undefined?step=reEnter:step=arrLength  }
        else step=0
-    console.log("step ",step)
+   
        if (step===0) //First time start
         {return(
             <FormSelect
@@ -24,12 +23,11 @@ const RequestLine =
             onChangeFunction={changeHandler}
              />
         )}
-
-        const reqSchemArr=mainArray.reduce((acc,val,i)=>
-       { return( val[0]["title"]===SamplePropertiesArr[0]? val :acc)})[step];
-       console.log(reqSchemArr)
-            
-       switch (reqSchemArr["inputTipe"]){
+        const SampleArr= mainArray.filter((v,i,a)=>(v[0]["title"]===SamplePropertiesArr[0]))[0] 
+    if (SampleArr.length>step)        
+      {  const reqSchemArr=SampleArr[step]
+      
+      switch (reqSchemArr["inputTipe"]){
 
       
         case "input":  return(
@@ -40,17 +38,17 @@ const RequestLine =
         case "select":  return( 
                           <FormSelect
                           options={reqSchemArr["options"]}
-                          title={" Выберите тип образца " }
+                          title={reqSchemArr["title"]}
                           onChangeFunction={changeHandler}
                         />)
         case "array":  return(
-                            <FormInput
+                            <InputArray
                                 title={ reqSchemArr["title"]}
                                 arrayInputFuncton={changeHandler}
                              />)
         break
        }
-
+}
 
     
 

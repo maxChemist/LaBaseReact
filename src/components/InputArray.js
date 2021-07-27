@@ -1,8 +1,8 @@
 import React from "react";
 import {ConvertLineInNumberArr} from "./Libraries"
 
-const FormArray=({title, arrayInputFuncton} )=>{
-   
+const InputArray=({title, arrayInputFuncton} )=>{
+     
     return(
       <div>
         {title}
@@ -14,4 +14,4 @@ const FormArray=({title, arrayInputFuncton} )=>{
     )
   
    }
-   export default  FormArray;
+   export default  InputArray;
