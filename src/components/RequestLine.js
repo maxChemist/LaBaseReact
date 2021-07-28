@@ -5,29 +5,34 @@ import FormSelect from "./FormSelect"
 
 const RequestLine = 
 ({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter,SetReEnter }) => {
- 
+  console.log(reEnter)
 const changeHandler = (e,baseKey) => {
+       
         const arr=SamplePropertiesArr
         arr[reEnter]=e
         SetSamplePropertiesArr(arr);
         SetBaseRec({...baseRecords,[baseKey]:e })
         SetReEnter(arr.length)
  };
-
-const step=reEnter
-   
-       if (step===0) //First time start
-        {return(
+  
+       if (reEnter+""==="0") //First time start
+       {
+        SamplePropertiesArr=[]
+        baseRecords={};
+        SetReEnter(0);
+         return(
             <FormSelect
-            options={mainArray.map((v)=>(v[0]["title"]))}
+            options={mainArray.map((v)=>(v[reEnter]["title"]))}
             title={" Выберите тип образца " }
             onChangeFunction={changeHandler}
             baseKey={"sample"}
              />
         )}
         const SampleArr= mainArray.filter((v,i,a)=>(v[0]["title"]===SamplePropertiesArr[0]))[0] 
-    if (SampleArr.length>step)        
-      {  const reqSchemArr=SampleArr[step]
+
+        
+    if (SampleArr.length>reEnter)        
+      {  const reqSchemArr=SampleArr[reEnter]
       
       switch (reqSchemArr["inputTipe"]){
 
