@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 import RequestLine from "./components/RequestLine"
 import DisplaySampleProperties from "./components/DisplaySampleProperties"
+import SampleCarrierProperties from "./components/SampleCarrierProperties"
 
 
 const TaraValue=["0.75","0.7","0.2","3.0" ]
-const SapleReceiver=["Сташевский", "Ярушников","Лазарева"]
-const SamplCarrier=["Иванов","Петров","Сидоров"]
+const SampleReceiver=["Сташевский", "Ярушников","Лазарева"]
+const SampleCarrier=["Иванов","Петров","Сидоров"]
 const TeqStepBlend = ["Приготовление", "Обработка", "Фильтрация"];
 const TankType = ["Цистерна", "Дрожжанка", "Бочка"];
 const GrapeSort = ["Алиготе", "Виноматериал столовый", "Каберне", "Каберне (по белому)", "Мерло", "Мускат", "Пино", "Пино (по белому)", "Пино Гри", "Пино Нуар", "Пино Фран", "Рислинг", "Ркацители", "Саперави ", "Совиньон", "Фетяска", "Шардоне"];
@@ -42,47 +43,7 @@ const mainArray = [
 ];
 
 
-const SamplerProps=()=>{
-return (
-  <div>
-    <div>
-    {"Объём пробы:  "}
-      <select>
-        {TaraValue.map((v)=>(<option key={v}>{v}</option>))}
-      </select>
-    {"  x  "}
-    <select>
-      <option key={"1"}>{"1"}</option>
-      <option key={"2"}>{"2"}</option>
-      <option key={"3"}>{"3"}</option>
-      <option key={"4"}>{"4"}</option>
-      <option key={"5"}>{"5"}</option>
-      </select>
-    </div>
-  <div>
-    {"Пробу доставил:  "}
-    <select>
-      <option key={"Пробу доставил"}>{"    "}</option>
-      {SamplCarrier.map((v)=>(<option key={v}>{v}</option>))}
-    </select>
-  </div>
- 
-  <div>
-    {"Пробу принял:  "}
-    <select>
-      <option key={"Пробу принял"}>{"    "}</option>
-      {SapleReceiver.map((v)=>(<option key={v}>{v}</option>))}
-    </select>
-  </div>
 
-  <div>
-    {"Дата поступления:  "}
-    <input type="date" onChange={(e)=>(console.log(e))}></input>
-  </div>
-  </div>
-)
-
-}
 
 
 
@@ -104,11 +65,17 @@ function Start() {
           SamplePropertiesArr={SamplePropertiesArr}
           baseRecords={baseRecords}
           mainArray={mainArray}
+          SetBaseRec={SetBaseRec}
         />
        </div>
        <div>
-         <SamplerProps/>
-       </div>
+         <SampleCarrierProperties
+         baseRecords={baseRecords}
+         TaraValue={TaraValue}
+         SampleCarrier={SampleCarrier}
+         SampleReceiver={SampleReceiver}
+         />
+         </div>
     </div>
   );
 }
