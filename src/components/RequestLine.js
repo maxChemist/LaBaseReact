@@ -4,17 +4,13 @@ import InputArray from "./InputArray";
 import FormSelect from "./FormSelect"
 
 const RequestLine = 
-({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter }) => {
+({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter,SetReEnter }) => {
     const changeHandler = (e,baseKey) => {
         SetSamplePropertiesArr((prev) => [...prev, e]);
         SetBaseRec({...baseRecords,[baseKey]:e })
+        SetReEnter(((prev) =>prev+1))
        };
-       var step=0
-       const arrLength=SamplePropertiesArr.length
-      
-       if(arrLength!==undefined) 
-        { reEnter!==undefined?step=reEnter:step=arrLength  }
-       else step=0
+const step=reEnter
    
        if (step===0) //First time start
         {return(

@@ -50,6 +50,7 @@ const mainArray = [
 function Start() {
   const [SamplePropertiesArr, SetSamplePropertiesArr] = useState([]);
   const [baseRecords, SetBaseRec] = useState({});
+  const [reEnter,SetReEnter]=useState(0)
 
   return (
     <div>
@@ -65,6 +66,8 @@ function Start() {
           SamplePropertiesArr={SamplePropertiesArr}
           baseRecords={baseRecords}
           mainArray={mainArray}
+          reEnter={reEnter}
+          SetReEnter={SetReEnter}
           SetBaseRec={SetBaseRec}
         />
        </div>

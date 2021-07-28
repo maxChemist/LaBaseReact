@@ -1,12 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray }) => {
+const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray }) =>
+{
+
   const arr = mainArray.reduce((acc, rec) => rec[0].title === SamplePropertiesArr[0] ? rec : acc)
-
+ 
   return SamplePropertiesArr.map((el, i) => {
     const { prefix = '', postfix = '' } = arr[i]
     return (
-      <button key={el} onClick={(e) => (console.log(e.target))}>
+      <button tag={i} key={el} onClick={(e) => (console.log(e.target.attributes['tag'].value))}>
         <i>
           {`${prefix}${el}${postfix}`}
         </i>
@@ -15,4 +17,5 @@ const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray }) => {
   })
 }
 
-export default DisplaySampleProperties
+
+  export default DisplaySampleProperties;
