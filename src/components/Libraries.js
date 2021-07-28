@@ -18,4 +18,12 @@ export const ConvertLineInNumberArr=(text)=>{
     return(r)
   
   }
+
+  export function isEmpty(obj) {
+    for(var key in obj)
+    {
+        return false;
+    }
+    return true;
+}
  // export default functioinsLibraries

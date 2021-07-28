@@ -5,8 +5,8 @@ import FormSelect from "./FormSelect"
 
 const RequestLine = 
 ({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter,SetReEnter }) => {
-  console.log(reEnter)
-const changeHandler = (e,baseKey) => {
+
+  const changeHandler = (e,baseKey) => {
        
         const arr=SamplePropertiesArr
         arr[reEnter]=e
@@ -19,7 +19,6 @@ const changeHandler = (e,baseKey) => {
        {
         SamplePropertiesArr=[]
         baseRecords={};
-        SetReEnter(0);
          return(
             <FormSelect
             options={mainArray.map((v)=>(v[reEnter]["title"]))}
@@ -30,7 +29,7 @@ const changeHandler = (e,baseKey) => {
         )}
         const SampleArr= mainArray.filter((v,i,a)=>(v[0]["title"]===SamplePropertiesArr[0]))[0] 
 
-        
+
     if (SampleArr.length>reEnter)        
       {  const reqSchemArr=SampleArr[reEnter]
       

@@ -5,9 +5,10 @@ import DisplaySampleProperties from "./components/DisplaySampleProperties"
 import SampleCarrierProperties from "./components/SampleCarrierProperties"
 
 
-const TaraValue=["0.75","0.7","0.2","3.0" ]
-const SampleReceiver=["Сташевский", "Ярушников","Лазарева"]
-const SampleCarrier=["Иванов","Петров","Сидоров"]
+const samplingPlace=["Винцех", "Рампа", "Тиражный цех"]
+const taraValue=["0.75","0.7","0.2","3.0" ]
+const sampleReceiver=["Сташевский", "Ярушников","Лазарева"]
+const sampleDeliveryman=["Иванов","Петров","Сидоров"]
 const TeqStepBlend = ["Приготовление", "Обработка", "Фильтрация"];
 const TankType = ["Цистерна", "Дрожжанка", "Бочка"];
 const GrapeSort = ["Алиготе", "Виноматериал столовый", "Каберне", "Каберне (по белому)", "Мерло", "Мускат", "Пино", "Пино (по белому)", "Пино Гри", "Пино Нуар", "Пино Фран", "Рислинг", "Ркацители", "Саперави ", "Совиньон", "Фетяска", "Шардоне"];
@@ -42,15 +43,11 @@ const mainArray = [
   ]
 ];
 
-
-
-
-
-
 function Start() {
   const [SamplePropertiesArr, SetSamplePropertiesArr] = useState([]);
   const [baseRecords, SetBaseRec] = useState({});
   const [reEnter,SetReEnter]=useState(0)
+  const [deliverySample,SetDeliverySample]=useState({})
 
   return (
     <div>
@@ -59,15 +56,21 @@ function Start() {
         SamplePropertiesArr={SamplePropertiesArr} 
         mainArray={mainArray}
         SetReEnter={SetReEnter}
+        
         />
+        <div>{JSON.stringify(baseRecords,null,3)}</div>      
       </div>
 
        <div>
          <SampleCarrierProperties
          baseRecords={baseRecords}
-         TaraValue={TaraValue}
-         SampleCarrier={SampleCarrier}
-         SampleReceiver={SampleReceiver}
+         taraValue={taraValue}
+         samplingPlace={samplingPlace}
+         sampleDeliveryman={sampleDeliveryman}
+         sampleReceiver={sampleReceiver}
+         deliverySample={deliverySample}
+         SetDeliverySample={SetDeliverySample}
+
          />
          </div>
 

@@ -4,8 +4,6 @@ const FormInput=({title,onInputFunction,baseKey})=>{
       <div>
         {title}
       <input type="text" onKeyDown={(e)=>{if(e.key==="Enter") {onInputFunction(e.target.value,baseKey)}}}></input>
-      <button>{"=>"}</button>
-     
       </div>
     )
     }

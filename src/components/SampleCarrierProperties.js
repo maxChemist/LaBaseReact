@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import React  from "react";
 
-const SampleCarrierProperties=({baseRecords,TaraValue,SampleCarrier,SampleReceiver})=>{
-   
+import {isEmpty} from "./Libraries"
+
+const SampleCarrierProperties=({taraValue,samplingPlace,sampleDeliveryman,sampleReceiver,deliverySample,SetDeliverySample})=>{
+  const changeHandler=(e,key)=>{
+    const obj={...deliverySample}
+    obj[key]=e
+    SetDeliverySample(obj)
+
+  }
+   if (isEmpty(deliverySample))
+    {
+      deliverySample["samplingPlace"]=samplingPlace[0];
+      deliverySample["sampleValue"]=[{"taraValue":taraValue[0],"quantity":1}]
+      deliverySample["sampleBring"]=null
+      deliverySample["sampleRecieve"]=null
+      deliverySample["deliveryDate"]=null
+       
+    }
   return (
       <div>
+        <hr></hr>
+      <div>
+        {"Откуда поступила проба:  "}
+        <select  onChange={e=>changeHandler(e.target.value,"samplingPlace")}     >
+            {samplingPlace.map((v)=>(<option key={v}>{v}</option>))}
+        </select>
+      </div>
         <div>
         {"Объём пробы:  "}
           <select>
-           {TaraValue.map((v)=>(<option key={v}>{v}</option>))}
+           {taraValue.map((v)=>(<option key={v}>{v}</option>))}
           </select>
         {"  x  "}
         <select>
@@ -20,27 +43,29 @@ const SampleCarrierProperties=({baseRecords,TaraValue,SampleCarrier,SampleReceiv
         </div>
       <div>
         {"Пробу доставил:  "}
-        <select>
-          <option key={"Пробу доставил"}>{"    "}</option>
-          {SampleCarrier.map((v)=>(<option key={v}>{v}</option>))}
+        <select onChange={e=>changeHandler(e.target.value,"sampleBring")}>
+          <option key={"Пробу доставил"}>{""}</option>
+          {sampleDeliveryman.map((v)=>(<option key={v}>{v}</option>))}
         </select>
       </div>
      
       <div>
         {"Пробу принял:  "}
-        <select>
-          <option key={"Пробу принял"}>{"    "}</option>
-          {SampleReceiver.map((v)=>(<option key={v}>{v}</option>))}
+        <select onChange={e=>changeHandler(e.target.value,"sampleRecieve")}>
+          <option key={"Пробу принял"}>{""}</option>
+          {sampleReceiver.map((v)=>(<option key={v}>{v}</option>))}
         </select>
       </div>
     
       <div>
         {"Дата поступления:  "}
-        <input type="date" onChange={(e)=>(console.log(e))}></input>
+        <input type="date" onChange={e=>changeHandler(e.target.value,"deliveryDate")}></input>
       </div>
 
-      {JSON.stringify(baseRecords,null,3)}
+        {JSON.stringify(deliverySample,null,3)}      
+        <hr></hr>
       </div>
+
     )
     
     }
