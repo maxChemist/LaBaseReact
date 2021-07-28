@@ -1,6 +1,6 @@
 import React from "react";
 
-const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray }) =>
+const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray,SetReEnter }) =>
 {
 
   const arr = mainArray.reduce((acc, rec) => rec[0].title === SamplePropertiesArr[0] ? rec : acc)
@@ -8,7 +8,13 @@ const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray }) =>
   return SamplePropertiesArr.map((el, i) => {
     const { prefix = '', postfix = '' } = arr[i]
     return (
-      <button tag={i} key={el} onClick={(e) => (console.log(e.target.attributes['tag'].value))}>
+      <button data-step={i} 
+      key={el}
+      onClick={(e) => {
+        const step=e.nativeEvent.target.parentElement.dataset.step
+        SetReEnter(step)
+        
+        }}>
         <i>
           {`${prefix}${el}${postfix}`}
         </i>

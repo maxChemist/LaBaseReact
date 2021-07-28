@@ -58,9 +58,20 @@ function Start() {
         <DisplaySampleProperties 
         SamplePropertiesArr={SamplePropertiesArr} 
         mainArray={mainArray}
+        SetReEnter={SetReEnter}
         />
       </div>
-      <div>
+
+       <div>
+         <SampleCarrierProperties
+         baseRecords={baseRecords}
+         TaraValue={TaraValue}
+         SampleCarrier={SampleCarrier}
+         SampleReceiver={SampleReceiver}
+         />
+         </div>
+
+         <div>
         <RequestLine
           SetSamplePropertiesArr={SetSamplePropertiesArr}
           SamplePropertiesArr={SamplePropertiesArr}
@@ -71,14 +82,7 @@ function Start() {
           SetBaseRec={SetBaseRec}
         />
        </div>
-       <div>
-         <SampleCarrierProperties
-         baseRecords={baseRecords}
-         TaraValue={TaraValue}
-         SampleCarrier={SampleCarrier}
-         SampleReceiver={SampleReceiver}
-         />
-         </div>
+
     </div>
   );
 }
