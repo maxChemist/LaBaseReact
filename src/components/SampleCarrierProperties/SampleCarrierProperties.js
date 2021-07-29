@@ -32,6 +32,8 @@ const SampleCarrierProperties=({taraValue,samplingPlace,sampleDeliveryman,sample
         />
         <SampleValue
         taraValue={taraValue}
+        SetDeliverySample={SetDeliverySample}
+        deliverySample={deliverySample}
         
         />
         <SampleBring
