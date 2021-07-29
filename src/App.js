@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import RequestLine from "./components/RequestLine"
 import DisplaySampleProperties from "./components/DisplaySampleProperties"
-import SampleCarrierProperties from "./components/SampleCarrierProperties"
+import SampleCarrierProperties from "./components/SampleCarrierProperties/SampleCarrierProperties"
 
 
 const samplingPlace=["Винцех", "Рампа", "Тиражный цех"]
