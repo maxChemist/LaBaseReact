@@ -8,21 +8,20 @@ import SampleReciever from "./SampleReceiver"
 import DeliveryDate from "./DeliveryDate"
 
 const SampleCarrierProperties=({taraValue,samplingPlace,sampleDeliveryman,sampleReceiver,deliverySample,SetDeliverySample})=>{
-  const changeHandler=(e,key)=>{
-    const obj={...deliverySample}
-    obj[key]=e
-    SetDeliverySample(obj)
-
+  const changeHandler=(e,key)=>{SetDeliverySample({...deliverySample,[key]:e})
   }
+
+  
    if (isEmpty(deliverySample))
     {
       deliverySample["samplingPlace"]=samplingPlace[0];
       deliverySample["sampleValue"]=[{"taraValue":taraValue[0],"quantity":1}]
-      deliverySample["sampleBring"]=null
-      deliverySample["sampleRecieve"]=null
-      deliverySample["deliveryDate"]=null
-       
+      deliverySample["sampleBring"]=""
+      deliverySample["sampleRecieve"]=""
+      deliverySample["deliveryDate"]=""
     }
+
+
   return (
       <div>
         <hr></hr>
@@ -49,9 +48,6 @@ const SampleCarrierProperties=({taraValue,samplingPlace,sampleDeliveryman,sample
         <DeliveryDate
           changeHandler={changeHandler}
         />
-
-
-        {JSON.stringify(deliverySample,null,3)}      
         <hr></hr>
       </div>
 

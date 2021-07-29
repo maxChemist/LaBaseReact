@@ -4,7 +4,6 @@ import RequestLine from "./components/RequestLine"
 import DisplaySampleProperties from "./components/DisplaySampleProperties"
 import SampleCarrierProperties from "./components/SampleCarrierProperties/SampleCarrierProperties"
 
-
 const samplingPlace=["Винцех", "Рампа", "Тиражный цех"]
 const taraValue=["0.75","0.7","0.2","3.0" ]
 const sampleReceiver=["Сташевский", "Ярушников","Лазарева"]
@@ -58,7 +57,7 @@ function Start() {
         SetReEnter={SetReEnter}
         
         />
-        <div>{JSON.stringify(baseRecords,null,3)}</div>      
+    
       </div>
 
        <div>
@@ -83,8 +82,11 @@ function Start() {
           reEnter={reEnter}
           SetReEnter={SetReEnter}
           SetBaseRec={SetBaseRec}
+          deliverySample={deliverySample}
+
         />
-       </div>
+         </div>
+
 
     </div>
   );

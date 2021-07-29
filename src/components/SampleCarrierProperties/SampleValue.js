@@ -26,15 +26,15 @@ const SampleValue=({taraValue, SetDeliverySample, deliverySample})=>{
         {        return(
          <div>   
         <select onChange={e=>valueChanged(e.target.value)}>
-        {taraValue.map((v)=>(<option key={v}>{v}</option>))}
+        {taraValue.map((v)=>(<option key={v}>{v+""+i}</option>))}
        </select>  
        {"x"}
        <select onChange={e=>quantityChanged(e.target.value)}>
-       <option key={"1"}>{"1"}</option>
-       <option key={"2"}>{"2"}</option>
-       <option key={"3"}>{"3"}</option>
-       <option key={"4"}>{"4"}</option>
-       <option key={"5"}>{"5"}</option>
+       <option key={"1"+i}>{"1"}</option>
+       <option key={"2"+i}>{"2"}</option>
+       <option key={"3"+i}>{"3"}</option>
+       <option key={"4"+i}>{"4"}</option>
+       <option key={"5"+i}>{"5"}</option>
        </select> 
        {drawButton(i,l)}
 
@@ -82,7 +82,7 @@ const SampleValue=({taraValue, SetDeliverySample, deliverySample})=>{
         
         drawSelects(i,a.length)
         ))}  
-        {JSON.stringify(lineNumbers,null,3)}
+        
         </div>
     )
 

@@ -3,8 +3,17 @@ import FormInput from "./FormInput";
 import InputArray from "./InputArray";
 import FormSelect from "./FormSelect"
 
+
 const RequestLine = 
-({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter,SetReEnter }) => {
+({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter,SetReEnter,deliverySample }) => {
+
+   const isDeliverySampleCompleet=()=>{
+     console.log(deliverySample["sampleBring"].length,deliverySample["sampleRecieve"].length,deliverySample["deliveryDate"].length)
+    if(deliverySample["sampleBring"].length>1 && deliverySample["sampleRecieve"].length>1 && deliverySample["deliveryDate"].length>1)
+    {return true}
+    else{ return false}
+
+  }
 
   const changeHandler = (e,baseKey) => {
        
@@ -60,7 +69,17 @@ const RequestLine =
 }
 
     
-
+if(isDeliverySampleCompleet())
+{
+  const d=new Date(); const t=d.getTime()+""
+ const smpl= Object.assign(baseRecords,deliverySample,{"registrationTime":t})
+  return(
+  <div>  
+  <button>Зарегистрировать</button>
+  {JSON.stringify(smpl,null,3)}
+  </div>
+  )
+}
 return(<div></div>)
 }
   export default RequestLine;
