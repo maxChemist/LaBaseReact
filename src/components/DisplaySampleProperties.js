@@ -11,7 +11,7 @@ const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray,SetReEnter }) 
     const { prefix = '', postfix = '' } = arr[i]
     return (
       <button data-step={i} 
-      key={el}
+      key={el+" "+i}
       onClick={(e) => {
         const step=e.nativeEvent.target.parentElement.dataset.step
         SetReEnter(step)

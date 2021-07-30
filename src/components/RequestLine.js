@@ -2,18 +2,23 @@ import React from "react";
 import FormInput from "./FormInput";
 import InputArray from "./InputArray";
 import FormSelect from "./FormSelect"
+import {getUniqueNumber, writeToBase} from "./Libraries"
 
 
 const RequestLine = 
 ({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter,SetReEnter,deliverySample }) => {
 
    const isDeliverySampleCompleet=()=>{
-     console.log(deliverySample["sampleBring"].length,deliverySample["sampleRecieve"].length,deliverySample["deliveryDate"].length)
-    if(deliverySample["sampleBring"].length>1 && deliverySample["sampleRecieve"].length>1 && deliverySample["deliveryDate"].length>1)
+     if(deliverySample["sampleBring"].length>1 && deliverySample["sampleRecieve"].length>1 && deliverySample["deliveryDate"].length>1)
     {return true}
     else{ return false}
 
   }
+  const clickRegistration=()=>{
+    const d=new Date(); const t=d.getTime()+""
+    const smpl= Object.assign({"idNumber":getUniqueNumber()},baseRecords,deliverySample,{"registrationTime":t})
+    writeToBase(smpl)
+    }
 
   const changeHandler = (e,baseKey) => {
        
@@ -71,13 +76,11 @@ const RequestLine =
     
 if(isDeliverySampleCompleet())
 {
-  const d=new Date(); const t=d.getTime()+""
- const smpl= Object.assign(baseRecords,deliverySample,{"registrationTime":t})
+
   return(
   <div>  
-  <button>Зарегистрировать</button>
-  {JSON.stringify(smpl,null,3)}
-  </div>
+  <button onClick={clickRegistration}>Зарегистрировать</button>
+   </div>
   )
 }
 return(<div></div>)

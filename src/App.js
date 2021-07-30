@@ -42,6 +42,8 @@ const mainArray = [
   ]
 ];
 
+localStorage.setItem("myBase",[])
+
 function Start() {
   const [SamplePropertiesArr, SetSamplePropertiesArr] = useState([]);
   const [baseRecords, SetBaseRec] = useState({});

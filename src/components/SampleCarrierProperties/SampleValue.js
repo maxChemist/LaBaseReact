@@ -7,10 +7,10 @@ const SampleValue=({taraValue, SetDeliverySample, deliverySample})=>{
     const [lineNumbers, SetLineNumbers]=useState([{"taraValue":taraValue[0],"quantity":1}])
 
     const drawButton=(i,l)=>{
-        if(l==1){
+        if(l===1){
         return(<button onClick={plusBtnClicked}>+</button> )}
         else {  
-            if(l>1 && i==l-1){
+            if(l>1 && i===l-1){
                 return(
                  <div>
                 <button onClick={plusBtnClicked}>+</button> 
@@ -22,11 +22,11 @@ const SampleValue=({taraValue, SetDeliverySample, deliverySample})=>{
     
     const drawSelects=(i,l)=>{
 
-        if (i==l-1)
+        if (i===l-1)
         {        return(
-         <div>   
+         <div key={i+" "+l}>   
         <select onChange={e=>valueChanged(e.target.value)}>
-        {taraValue.map((v)=>(<option key={v}>{v+""+i}</option>))}
+        {taraValue.map((v)=>(<option key={v+""+i}>{v}</option>))}
        </select>  
        {"x"}
        <select onChange={e=>quantityChanged(e.target.value)}>
@@ -43,7 +43,7 @@ const SampleValue=({taraValue, SetDeliverySample, deliverySample})=>{
        else
        {
           return (           
-            <div>
+            <div key={i+" "+l} >
             {`${lineNumbers[i]["taraValue"]} x  ${lineNumbers[i]["quantity"]}`  } 
            </div>)
        }
