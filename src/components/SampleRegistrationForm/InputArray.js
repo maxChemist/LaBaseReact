@@ -1,5 +1,5 @@
 import React from "react";
-import {ConvertLineInNumberArr} from "../Libraries"
+import {convertLineInNumberArr} from "../Libraries"
 
 const InputArray=({title, arrayInputFuncton,baseKey} )=>{
      
@@ -9,7 +9,7 @@ const InputArray=({title, arrayInputFuncton,baseKey} )=>{
         {title}
         <input type="text" onKeyDown={(e)=>
         {if(e.key==="Enter") 
-           { const arr=ConvertLineInNumberArr(e.target.value);
+           { const arr=convertLineInNumberArr(e.target.value);
              arrayInputFuncton(arr,baseKey)
                
         }}}></input>

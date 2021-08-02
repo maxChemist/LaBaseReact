@@ -10,15 +10,9 @@ const SampleCarrierProperties=({taraValue,samplingPlace,sampleDeliveryman,sample
   const changeHandler=(e,key)=>{SetDeliverySample({...deliverySample,[key]:e})
   }
 
-  const  isEmpty=(obj)=> {
-    //проверка объекта на "пустотность"
-    for(var key in obj)
-    {
-        return false;
-    }
-    return true;
-}
   
+
+const isEmpty = obj => Object.keys(obj).length === 0
    if (isEmpty(deliverySample))
     {
       deliverySample["samplingPlace"]=samplingPlace[0];

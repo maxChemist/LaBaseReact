@@ -1,24 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
 import SampleRegistrationForm from "./components/SampleRegistrationForm/SampleRegistrationForm"
-
-
-
-
-
+import SamplesList from "./components/SamplesList/SamplesList"
 localStorage.setItem("myBase",[])
 
 function Start() {
 
-
-  return (
+return (
     <div>
       <SampleRegistrationForm
-
       />
 
-
-    </div>
+      <SamplesList         />
+      
+     </div>
   );
 }
 function App() {
