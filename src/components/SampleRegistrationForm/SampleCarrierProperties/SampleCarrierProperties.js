@@ -1,6 +1,5 @@
 import React  from "react";
 
-import {isEmpty} from "../Libraries"
 import SamplingPlace from "./SamplingPlace"
 import SampleValue from "./SampleValue"
 import SampleBring from "./SampleBring"
@@ -11,6 +10,14 @@ const SampleCarrierProperties=({taraValue,samplingPlace,sampleDeliveryman,sample
   const changeHandler=(e,key)=>{SetDeliverySample({...deliverySample,[key]:e})
   }
 
+  const  isEmpty=(obj)=> {
+    //проверка объекта на "пустотность"
+    for(var key in obj)
+    {
+        return false;
+    }
+    return true;
+}
   
    if (isEmpty(deliverySample))
     {

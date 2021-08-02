@@ -2,7 +2,8 @@ import React from "react";
 import FormInput from "./FormInput";
 import InputArray from "./InputArray";
 import FormSelect from "./FormSelect"
-import {getUniqueNumber, writeToBase} from "./Libraries"
+import getUniqueNumber from "../WorkWithBase/getUniqueNumber"
+import writeToBase from "../WorkWithBase/writeToBase"
 
 
 const RequestLine = 

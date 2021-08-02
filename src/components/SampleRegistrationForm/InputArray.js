@@ -1,5 +1,5 @@
 import React from "react";
-import {ConvertLineInNumberArr} from "./Libraries"
+import {ConvertLineInNumberArr} from "../Libraries"
 
 const InputArray=({title, arrayInputFuncton,baseKey} )=>{
      
