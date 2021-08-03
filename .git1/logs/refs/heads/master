@@ -1,0 +1,12 @@
+0000000000000000000000000000000000000000 6872fd66d469a82889c304ec8a7adfe0a3540851 Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627461616 +0300	initial pull
+6872fd66d469a82889c304ec8a7adfe0a3540851 c4db637b382d58bdb171e05614734d7411dfc3a1 Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627461687 +0300	commit: added useState for step
+c4db637b382d58bdb171e05614734d7411dfc3a1 60c6170a8673289eee12b6b377b2268379052a83 Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627468784 +0300	commit: Добавлена возможность иправления
+60c6170a8673289eee12b6b377b2268379052a83 cd948698b08f1795b7324e00fc63b90d1f6c59d2 Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627472751 +0300	commit: Добавлена возможность править первый параметр
+cd948698b08f1795b7324e00fc63b90d1f6c59d2 130ea0ff4f2acbb53a4fe64212a36ab45085d409 Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627477880 +0300	commit: Обработка доставки пробы
+130ea0ff4f2acbb53a4fe64212a36ab45085d409 670418077b558c9014ef1015d888c75c50e7d76f Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627545541 +0300	commit: Реорганизация введения объёмов
+670418077b558c9014ef1015d888c75c50e7d76f 99880919de6e8bc5d49fc62a4c242e2df9de4e71 Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627559369 +0300	commit: Доделал выбор объёмов
+99880919de6e8bc5d49fc62a4c242e2df9de4e71 c687c2d3929c3ebbdb73dc83dddfaa040cd10d6c Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627563068 +0300	commit: Сведение объекта для регистрации
+c687c2d3929c3ebbdb73dc83dddfaa040cd10d6c 7a9431077c5b969da2e4396ef506a49a9c40745f Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627647011 +0300	commit: Хранение в localStorage
+7a9431077c5b969da2e4396ef506a49a9c40745f cac6c0b260b4c1ee330dafb957af8f5f74e3bbd6 Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627893611 +0300	commit: Реорганизация проекта
+cac6c0b260b4c1ee330dafb957af8f5f74e3bbd6 86a690626d708c0010ac5511964c2b40ccf6a94d Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627912632 +0300	commit: Начало формировки списка
+86a690626d708c0010ac5511964c2b40ccf6a94d 3c125f085b8a71a5efafd503c0c3ec5677e5eeff Maxim Stanovskiy <maxim.stanovskiy@gmail.com> 1627977518 +0300	commit: Откат react-table
