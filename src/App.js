@@ -1,4 +1,5 @@
 import React from "react";
+import Table from './components/Table'
 
 import SampleRegistrationForm from "./components/SampleRegistrationForm/SampleRegistrationForm"
 import SamplesList from "./components/SamplesList/SamplesList"
@@ -12,11 +13,15 @@ return (
       />
 
       <SamplesList         />
+      <Table/>
       
      </div>
   );
 }
+
+
 function App() {
+  
   return (
     <div className="App">
       <Start />
