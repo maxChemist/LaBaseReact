@@ -7,20 +7,23 @@ import writeToBase from "../WorkWithBase/writeToBase"
 
 
 const RequestLine = 
-({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter,SetReEnter,deliverySample }) => {
+({ SetSamplePropertiesArr, SamplePropertiesArr,baseRecords,SetBaseRec,mainArray,reEnter,SetReEnter,deliverySample,signalFlag,setSignalFlag }) => {
 
    const isDeliverySampleCompleet=()=>{
      if(deliverySample["sampleBring"].length>1 && deliverySample["sampleRecieve"].length>1 && deliverySample["deliveryDate"].length>1)
     {return true}
     else{ return false}
 
+    
   }
+
   const clickRegistration=()=>{
     const d=new Date(); const t=d.getTime()+""
-    const smpl= Object.assign({"idNumber":getUniqueNumber()},baseRecords,deliverySample,{"registrationTime":t})
+    const smpl= Object.assign({"idNumber":getUniqueNumber()},{sampleName:baseRecords},{"deliverySample":deliverySample},{"registrationTime":t})
     writeToBase(smpl)
+    setSignalFlag(prev=>(prev+1))
     }
-
+  
   const changeHandler = (e,baseKey) => {
        
         const arr=SamplePropertiesArr

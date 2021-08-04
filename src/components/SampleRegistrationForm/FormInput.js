@@ -3,7 +3,7 @@ const FormInput=({title,onInputFunction,baseKey})=>{
     return(
       <div>
         {title}
-      <input type="text" onKeyDown={(e)=>{if(e.key==="Enter") {onInputFunction(e.target.value,baseKey)}}}></input>
+      <input type="text" onKeyDown={(e)=>{if(e.key==="Enter") {onInputFunction(e.target.value.replace(/\s+/g, '').toUpperCase(),baseKey)}}}></input>
       </div>
     )
     }

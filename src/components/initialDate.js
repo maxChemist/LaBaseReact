@@ -24,8 +24,8 @@ export const mainArray = [
     ],
     [
       { title: "Ассамбляж", baseKey: "sample" },
-      { title: "Партия №", inputTipe: "input", baseKey: "number" },
-      {title:"Вошли партии", prefix:"Вошли партии: ",inputTipe:"array",baseKey:"partyInclude"}
+      { title: "Партия №", prefix:" №",inputTipe: "input", baseKey: "number" },
+      {title:"Вошли партии", prefix:" вошли партии: ",inputTipe:"array",baseKey:"partyInclude"}
     ],
     [
       { title: "Купаж", baseKey: "sample" },

@@ -14,7 +14,7 @@ import React from "react";
         arrObj=JSON.parse(preObj)
         arrObj.push(obj)
         localStorage.setItem("myBase",JSON.stringify(arrObj,null,0))
-        console.log(JSON.parse(localStorage.getItem("myBase")))
+       
       }
     }
 export default writeToBase;

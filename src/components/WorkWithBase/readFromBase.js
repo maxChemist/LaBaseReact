@@ -2,7 +2,7 @@
 
 const readFromBase=()=>{
 
-return (localStorage.getItem("myBase"))
+return (JSON.parse( localStorage.getItem("myBase")))
 
 }
 export default readFromBase;

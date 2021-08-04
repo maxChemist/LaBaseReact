@@ -5,7 +5,7 @@ import DisplaySampleProperties from "./DisplaySampleProperties"
 import SampleCarrierProperties from "./SampleCarrierProperties/SampleCarrierProperties"
 import {samplingPlace, taraValue, sampleReceiver, sampleDeliveryman, mainArray } from "../initialDate"
 
-const SampleRegistrationForm=()=>{
+const SampleRegistrationForm=({signalFlag,setSignalFlag})=>{
 
     const [SamplePropertiesArr, SetSamplePropertiesArr] = useState([]);
     const [baseRecords, SetBaseRec] = useState({});
@@ -47,6 +47,8 @@ return(
           SetReEnter={SetReEnter}
           SetBaseRec={SetBaseRec}
           deliverySample={deliverySample}
+          signalFlag={signalFlag}
+          setSignalFlag={setSignalFlag}
 
         />
          </div>
