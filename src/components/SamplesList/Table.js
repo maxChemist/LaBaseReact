@@ -1,12 +1,12 @@
 import React from 'react'
 import { useTable } from 'react-table'
 
-const Table = ({tableArr}) => {
-
+const Table = ({tableArr,signalFlag}) => {
+  const arr=[...tableArr]
   const data = React.useMemo(
     () => tableArr, []
   )
-
+    
   const columns = React.useMemo(
     () => [
       {
@@ -36,7 +36,10 @@ const Table = ({tableArr}) => {
 
   return (
     <div>
-      <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
+      {signalFlag}
+    
+    <div>
+        <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -81,6 +84,8 @@ const Table = ({tableArr}) => {
         </tbody>
       </table>
     </div>
+
+    </div> 
   )
 }
 

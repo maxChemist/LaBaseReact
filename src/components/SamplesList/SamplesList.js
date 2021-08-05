@@ -21,14 +21,19 @@ const formSampleName=(record)=>{
     }
 
     const formObjectForTable=()=>{
-        const obj=readFromBase()
-        const tableArr =obj.map((v)=>({sampleId:v["idNumber"],strName:formSampleName(v["sampleName"]),deliveryFrom:v["deliverySample"]["samplingPlace"]}))
-        return (tableArr)
+        var obj={}
+        if (readFromBase()===0)
+        {
+            obj=[{sampleId:" ",strName:" ", deliveryFrom:" "}]
+        }
+        else{
+            obj=readFromBase()
+            obj =obj.map((v)=>({sampleId:v["idNumber"],strName:formSampleName(v["sampleName"]),deliveryFrom:v["deliverySample"]["samplingPlace"]}))
+        }
+    
+       
+        return (obj)
     }
-    
-        console.log(signalFlag)
-    
- 
 
 return (
     <div>
@@ -36,8 +41,8 @@ return (
     {"Список зарегистрированных проб"}
     <WorkPeriod/>
     <Table
-
-            tableArr={formObjectForTable()}
+       tableArr={formObjectForTable()}
+       signalFlag={signalFlag}
     />
 
     </div>
