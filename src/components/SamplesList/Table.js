@@ -34,9 +34,10 @@ const Table = ({tableArr,signalFlag}) => {
     prepareRow,
   } = useTable({ columns, data })
 
+
   return (
     <div>
-      {signalFlag}
+      {JSON.stringify(tableArr,null,3)}
     
     <div>
         <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
