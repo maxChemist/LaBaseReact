@@ -4,7 +4,7 @@ import { useTable } from 'react-table'
 const Table = ({tableArr,signalFlag}) => {
   const arr=[...tableArr]
   const data = React.useMemo(
-    () => tableArr, []
+    () => tableArr, [tableArr]
   )
     
   const columns = React.useMemo(
@@ -37,7 +37,7 @@ const Table = ({tableArr,signalFlag}) => {
 
   return (
     <div>
-      {JSON.stringify(tableArr,null,3)}
+     
     
     <div>
         <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
