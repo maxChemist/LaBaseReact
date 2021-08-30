@@ -2,6 +2,7 @@ import React from "react";
 import FormInput from "./FormInput";
 import InputArray from "./InputArray";
 import FormSelect from "./FormSelect"
+import DateInput from "./DateInput"
 import getUniqueNumber from "../WorkWithBase/getUniqueNumber"
 import writeToBase from "../WorkWithBase/writeToBase"
 
@@ -51,7 +52,7 @@ const RequestLine =
     if (SampleArr.length>reEnter)        
       {  const reqSchemArr=SampleArr[reEnter]
       
-      switch (reqSchemArr["inputTipe"]){
+      switch (reqSchemArr["inputType"]){
 
       
         case "input":  return(
@@ -73,6 +74,13 @@ const RequestLine =
                                 arrayInputFuncton={changeHandler}
                                 baseKey={ reqSchemArr["baseKey"]}
                              />)
+        case "date":  return(  
+                              <DateInput
+                                title={ reqSchemArr["title"]}
+                                onChangeFunction={changeHandler}
+                                baseKey={ reqSchemArr["baseKey"]}
+                               />) 
+
         break
        }
 }
