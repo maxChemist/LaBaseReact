@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import RequestLine from "./RequestLine"
 import DisplaySampleProperties from "./DisplaySampleProperties"
 import SampleCarrierProperties from "./SampleCarrierProperties/SampleCarrierProperties"
-import {samplingPlace, taraValue, sampleReceiver, sampleDeliveryman, mainArray } from "../initialDate"
+import {samplingPlace, taraValue, sampleReceiver, sampleDeliveryman, mainArray } from "../../initialDate"
 
 const SampleRegistrationForm=({signalFlag,setSignalFlag})=>{
 

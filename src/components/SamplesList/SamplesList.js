@@ -1,7 +1,7 @@
 import React, { useState, useTable } from "react";
 import WorkPeriod from "./WorkPeriod";
 import readFromBase from "../WorkWithBase/readFromBase"
-import {mainArray} from "../initialDate"
+import {mainArray} from "../../initialDate"
 import Table from   "./Table"
 
 const SamplesList =({signalFlag,setSignalFlag})=>{
