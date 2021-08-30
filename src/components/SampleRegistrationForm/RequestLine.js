@@ -27,6 +27,7 @@ const RequestLine =
   
   const changeHandler = (e,baseKey) => {
        
+      
         const arr=SamplePropertiesArr
         arr[reEnter]=e
         SetSamplePropertiesArr(arr);
@@ -60,6 +61,7 @@ const RequestLine =
                             title={ reqSchemArr["title"]}
                             onInputFunction={changeHandler}
                             baseKey={ reqSchemArr["baseKey"]}
+                            canBeSkiped={reqSchemArr["canBeSkiped"]}
                        />)
         case "select":  return( 
                           <FormSelect

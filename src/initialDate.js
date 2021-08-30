@@ -74,14 +74,13 @@ export const mainArray = [
     ],
     [
       { title: "Игристое ТВ", baseKey: "sample" },
-      { title: "№", inputType: "input",prefix:"П-", baseKey: "number" },
+      { title: "№", inputType: "input",prefix:"П-",canBeSkiped:true, baseKey: "number" },
       { title: "Цвет", inputType: "select", options:VineColor,baseKey: "color" },
       { title:"Марка",inputType:"select",options:sparklingType, baseKey:"sparklingType" },
       { title:"Пробка", inputType:"select", options:corkType, baseKey:"corkType"},      
       { title: "Технологический этап", inputType: "select", options: TeqStepSparkling, baseKey: "teqStep" },
-      { title:"Дата розлива", inputType:"date",baseKey:"bottlingDate"},
-      { title: "Год тиража", inputType: "select", options: Years(),postfix:" г. тиража.", baseKey: "tirageYear"},
-      { title:  "№ купажа ", inputType:"array",prefix:"купаж №", baseKey:"blendInCuve"}
+      { title:"Дата розлива", inputType:"date",baseKey:"bottlingDate"}
+
 
     ]
 
