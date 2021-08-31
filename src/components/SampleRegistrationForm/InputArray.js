@@ -1,7 +1,7 @@
 import React from "react";
 import {convertLineInNumberArr} from "../Libraries"
 
-const InputArray=({title, arrayInputFuncton,baseKey} )=>{
+const InputArray=({title, arrayInputFuncton,baseKey,canBeSkiped} )=>{
      
   
     return(
@@ -13,6 +13,7 @@ const InputArray=({title, arrayInputFuncton,baseKey} )=>{
              arrayInputFuncton(arr,baseKey)
                
         }}}></input>
+        {canBeSkiped && <button onClick={e=>{arrayInputFuncton(null,baseKey)}}>Пропустить</button>}
       </div>
     )
   

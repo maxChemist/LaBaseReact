@@ -51,24 +51,24 @@ const SampleValue=({taraValue, SetDeliverySample, deliverySample})=>{
 
     const valueChanged=(txt)=>{        
         lineNumbers[lineNumbers.length-1]["taraValue"]=txt
-        SetDeliverySample({...deliverySample,["sampleValue"]:lineNumbers})
+        SetDeliverySample({...deliverySample,"sampleValue":lineNumbers})
     }
 
     const quantityChanged=(txt)=>{
         lineNumbers[lineNumbers.length-1]["quantity"]=txt
-        SetDeliverySample({...deliverySample,["sampleValue"]:lineNumbers})
+        SetDeliverySample({...deliverySample,"sampleValue":lineNumbers})
     }
     const plusBtnClicked=()=> {
         const arr=[...lineNumbers]
         arr.push({"taraValue":taraValue[0],"quantity":1})
-        SetDeliverySample({...deliverySample,["sampleValue"]:arr})
+        SetDeliverySample({...deliverySample,"sampleValue":arr})
         SetLineNumbers(arr)
     }
     
     const minusBtnClicked=()=>{
         const arr=[...lineNumbers]
         arr.pop()
-        SetDeliverySample({...deliverySample,["sampleValue"]:arr})
+        SetDeliverySample({...deliverySample,"sampleValue":arr})
         SetLineNumbers(arr)
 
     }

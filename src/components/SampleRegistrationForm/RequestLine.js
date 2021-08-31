@@ -3,6 +3,7 @@ import FormInput from "./FormInput";
 import InputArray from "./InputArray";
 import FormSelect from "./FormSelect"
 import DateInput from "./DateInput"
+import SubMenu from "./SubMenu"
 import getUniqueNumber from "../WorkWithBase/getUniqueNumber"
 import writeToBase from "../WorkWithBase/writeToBase"
 
@@ -69,26 +70,38 @@ const RequestLine =
                           title={reqSchemArr["title"]}
                           onChangeFunction={changeHandler}
                           baseKey={ reqSchemArr["baseKey"]}
+                          canBeSkiped={reqSchemArr["canBeSkiped"]}
                         />)
         case "array":  return(
                             <InputArray
                                 title={ reqSchemArr["title"]}
                                 arrayInputFuncton={changeHandler}
                                 baseKey={ reqSchemArr["baseKey"]}
+                                canBeSkiped={reqSchemArr["canBeSkiped"]}
                              />)
         case "date":  return(  
                               <DateInput
                                 title={ reqSchemArr["title"]}
                                 onChangeFunction={changeHandler}
                                 baseKey={ reqSchemArr["baseKey"]}
+                                canBeSkiped={reqSchemArr["canBeSkiped"]}
                                />) 
+        case "submenu": return(
+                                <SubMenu 
+                                subMenuArray={reqSchemArr["options"]}
+                                title={ reqSchemArr["title"]}
+                                compleetFunction={changeHandler}
+                                baseKey={ reqSchemArr["baseKey"]}
+                                
+                                />
+                               )
 
         break
        }
 }
 
     
-if(isDeliverySampleCompleet())
+if (true)//(isDeliverySampleCompleet())
 {
 
   return(

@@ -24,18 +24,6 @@ return(
     
       </div>
 
-       <div>
-         <SampleCarrierProperties
-         baseRecords={baseRecords}
-         taraValue={taraValue}
-         samplingPlace={samplingPlace}
-         sampleDeliveryman={sampleDeliveryman}
-         sampleReceiver={sampleReceiver}
-         deliverySample={deliverySample}
-         SetDeliverySample={SetDeliverySample}
-
-         />
-         </div>
 
          <div>
         <RequestLine
@@ -49,9 +37,21 @@ return(
           deliverySample={deliverySample}
           signalFlag={signalFlag}
           setSignalFlag={setSignalFlag}
-
         />
          </div>
+
+         <div>
+         {/* <SampleCarrierProperties
+         baseRecords={baseRecords}
+         taraValue={taraValue}
+         samplingPlace={samplingPlace}
+         sampleDeliveryman={sampleDeliveryman}
+         sampleReceiver={sampleReceiver}
+         deliverySample={deliverySample}
+         SetDeliverySample={SetDeliverySample}
+         /> */}
+         </div>
+
 
  </div>
 )
