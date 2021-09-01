@@ -1,5 +1,5 @@
 import React from "react";
-import {formStringFromObject} from "../Libraries"
+import {formStringFromSubMenuData} from "../Libraries"
 
 const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray,SetReEnter }) =>
 {
@@ -13,15 +13,14 @@ const DisplaySampleProperties = ({ SamplePropertiesArr, mainArray,SetReEnter }) 
 
 
 if (arr[i]["inputType"]==="submenu"){
-  console.log(el,el["name"],arr[i]["options"].reduce((acc, rec) => rec[0].title === el["name"] ? rec : acc))
- // formStringFromObject(i,el,arr[i]["options"])
-
-}
-
+   const textArr= formStringFromSubMenuData(el,arr[i]["options"].reduce((acc, rec) =>
+     rec[0].title === el["name"] ? rec : acc))
+     text=textArr.reduce((acc,v)=>(acc+" "+v+" "))
+  
+}else{
     const { prefix = '', postfix = '' ,canBeSkiped=''} = arr[i]
-    
     !canBeSkiped? text=prefix+el+postfix:text="."
-
+}
     return (
       <button data-step={i} 
       key={el+" "+i}

@@ -39,7 +39,7 @@ return (
     <div>
     <hr></hr>    
     {"Список зарегистрированных проб"}
-    <WorkPeriod/>
+    {/* <WorkPeriod/> */}
     <Table
        tableArr={formObjectForTable()}
        signalFlag={signalFlag}

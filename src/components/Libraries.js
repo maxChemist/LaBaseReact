@@ -2,9 +2,14 @@ export const convertLineInNumberArr = (text) => text.split(/[^0-9]+/).filter(el 
 
 export const isEmpty = obj => Object.keys(obj).length === 0
 
-export const formStringFromObject=(i,obj, arr)=>{
-    console.log(i,obj, arr)
+export const formStringFromSubMenuData=(obj, arr)=>{
+   
+    const keyArr= Object.keys(obj)
+    const textArr=keyArr.map((v,i)=>{
+      const { prefix = '', postfix = '' ,canBeSkiped=''} = arr[i]
+      return(prefix+obj[v]+postfix)
 
-  //  const arr=mainArray.reduce((acc, rec) => rec[0].title === SamplePropertiesArr[0] ? rec : acc)
+    })
+    return textArr
 
 }
